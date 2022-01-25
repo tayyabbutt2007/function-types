@@ -84,9 +84,15 @@ startGameBtn.addEventListener('click', () => {
 //rest operator
 
 const sumUp = (...numbers) => {
+    //function inside function
+    const validateValue = (number) => {
+        return isNaN(number) ? 0 : number;
+    };
+
+
     let sum = 0;
     for (let num of numbers){
-    sum += num;
+    sum += validateValue(num);
     }
     return sum;
 };
@@ -101,5 +107,5 @@ const subUp = function() {
     return sub;
 };
 
-console.log(sumUp(1,46,7,55,4,3,22,3));
+console.log(sumUp(1,46,7,'asd',4,3,22,3));
 console.log(subUp(1,46,7,55,4,3,22,3));
